@@ -32,6 +32,16 @@ modelproject/
         models.py
         tests.py
         views.py
+    templates/
+        modelapp/
+            person/
+                add.html
+                edit.html
+                index.html
+                info.html
+    res/
+        index.png   
+        add.png
 ```
 # How to Create and Run the Project
 ## Step 1: Create a Virtual Environment
