@@ -56,7 +56,7 @@
                         <td>{{ person.updated_at }}</td>
                         <td>
                             <a href="{%url 'person_edit' person.id%}">编辑</a> |
-                            <a href="{%url 'person_delete' person.id%}">删除</a>
+                            <a href="{% url 'person_delete' person.id %}" onclick="return confirm('确定要删除此用户吗？');">删除</a>
                         </td>
                     </tr>
                 {% endfor %}
