@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .center-content {
+            text-align: center;
+            margin: 0 auto;  /* 如果需要水平居中表格，可以添加这个属性 */
+        }
+        table {
+            width: 100%;  /* 可选：让表格占满父容器的宽度 */
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="center-content">
+        <h2>用户信息管理</h2>
+        <a href="{% url 'person_list'%}">浏览信息</a> |
+        <a href="{% url 'person_add'%}">添加信息</a>
+        <hr/>
+        <table>
+            <thead>                        
+                <tr>
+                    <th>ID</th>                
+                    <th>Name</th>                
+                    <th>Age</th>                
+                    <th>Email</th>                                                
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Created At</th>                
+                    <th>Updated At</th>                
+                </tr>
+            </thead>
+            <tbody>            
+                {% for person in persons %}
+                    <tr>
+                        <td>{{ person.id }}</td>
+                        <td>{{ person.name }}</td>
+                        <td>{{ person.age }}</td>
+                        <td>{{ person.email }}</td>
+                        <td>{{ person.phone }}</td>
+                        <td>{{ person.address }}</td>
+                        <td>{{ person.created_at }}</td>
+                        <td>{{ person.updated_at }}</td>
+                        <td>
+                            <a href="{%url 'person_edit' person.id%}">编辑</a> |
+                            <a href="{%url 'person_delete' person.id%}">删除</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

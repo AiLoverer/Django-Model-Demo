@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户信息管理</title>
+    <style>
+        .center-content {
+            text-align: center;
+            margin: 0 auto;  /* 如果需要水平居中表格，可以添加这个属性 */
+        }
+        .form-container {
+            margin: 0 auto;
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .form-container p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="center-content">
+        <h2>用户信息管理</h2>
+        <a href="{% url 'person_list' %}">浏览信息</a> |
+        <a href="{% url 'person_add' %}">添加信息</a>
+        <hr/>
+    </div>
+    <div class="form-container">
+        <p>
+            {{ info }}
+        </p>
+    </div>
+</body>
+</html>
